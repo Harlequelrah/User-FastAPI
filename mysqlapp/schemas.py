@@ -23,6 +23,12 @@ class User(UserCreate):
     class config:
         from_attributes = True
 
-class Token(BaseModel):
+class AccessToken(BaseModel):
     access_token: str
     token_type: str
+class RefreshToken(BaseModel):
+    refresh_token:str
+    token_type:str
+class Tokens(BaseModel):
+    access_token: AccessToken
+    refresh_token: RefreshToken
